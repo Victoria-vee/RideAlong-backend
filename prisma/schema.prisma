@@ -14,4 +14,16 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  vehicles Vehicle[]
+}
+
+model Vehicle {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String?  // Nullable string as specified by the LLD
+  plateNumber String
+  make        String
+  model       String
+  year        Int
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

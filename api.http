@@ -1,0 +1,37 @@
+### Register a User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "Joe Smith",
+  "email": "joe@gmail.com",
+  "password": "password123"
+}
+
+
+
+### Login a User
+
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+
+{
+    "email": "victoria1@gmail.com",
+    "password": "password123"
+}
+
+###Vehicle Registration
+POST http://localhost:5000/api/vehicle
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk2YzgwOGEyLThmOTMtNGNmYi1hZTAwLWYwMGM1YTc4ODNkMSIsImVtYWlsIjoidmljdG9yaWExQGdtYWlsLmNvbSIsImlhdCI6MTc4NDU3NTE1MSwiZXhwIjoxNzg1MTc5OTUxfQ.SZt7q7hDWOmWkrsv2WCJPst3kAYcmTSwnBrzrCVWb_8
+
+{
+  "userId": "96c808a2-8f93-4cfb-ae00-f00c5a7883d1",
+  "name": "Daily Driver",
+  "plateNumber": "XYZ-1234",
+  "make": "Toyota",
+  "model": "Camry",
+  "year": 2022
+}
