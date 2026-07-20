@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import prisma from "../config/prisma";
+import authMiddleware from "../middleware/auth.middleware";
 
 const router = Router();
 
@@ -48,7 +49,6 @@ router.post("/register", async (req: Request, res: Response) => {
     });
   }
 });
-
 
 router.post("/login", async (req: Request, res: Response) => {
   try {
@@ -107,5 +107,12 @@ router.post("/login", async (req: Request, res: Response) => {
   }
 });
 
+// Protected Route
+router.get("/profile", authMiddleware, (req, res) => {
+  res.status(200).json({
+    message: "You are authenticated!",
+    user: (req as any).user
+  });
+});
 
 export default router;
