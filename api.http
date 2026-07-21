@@ -18,14 +18,14 @@ Content-Type: application/json
 
 
 {
-    "email": "victoria1@gmail.com",
+    "email": "joe@gmail.com",
     "password": "password123"
 }
 
 ###Vehicle Registration
 POST http://localhost:5000/api/vehicle
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk2YzgwOGEyLThmOTMtNGNmYi1hZTAwLWYwMGM1YTc4ODNkMSIsImVtYWlsIjoidmljdG9yaWExQGdtYWlsLmNvbSIsImlhdCI6MTc4NDU3NTE1MSwiZXhwIjoxNzg1MTc5OTUxfQ.SZt7q7hDWOmWkrsv2WCJPst3kAYcmTSwnBrzrCVWb_8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzYWY1YWM1LWY1ZjAtNDgwZS05YjEyLTg4ODdlMjgwMzllMCIsImVtYWlsIjoiam9lQGdtYWlsLmNvbSIsImlhdCI6MTc4NDU4NTA1MCwiZXhwIjoxNzg1MTg5ODUwfQ.EsrYJGaQRDzRYtPggrZ9dguQvNfQ_hSfva86D1_ro8E
 
 {
   "userId": "96c808a2-8f93-4cfb-ae00-f00c5a7883d1",
@@ -34,4 +34,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk2YzgwOGEyL
   "make": "Toyota",
   "model": "Camry",
   "year": 2022
+}
+
+
+#### Upload Vehicle Document
+POST http://localhost:5000/api/vehicledocuments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzYWY1YWM1LWY1ZjAtNDgwZS05YjEyLTg4ODdlMjgwMzllMCIsImVtYWlsIjoiam9lQGdtYWlsLmNvbSIsImlhdCI6MTc4NDU4NTA1MCwiZXhwIjoxNzg1MTg5ODUwfQ.EsrYJGaQRDzRYtPggrZ9dguQvNfQ_hSfva86D1_ro8E
+
+{
+  "vehicleId": "1bb4b6d2-dd50-4d9c-97d9-56365ffb2e1b",
+  "documentType": "Registration",
+  "issueDate": "2023-01-01",
+  "expirationDate": "2024-01-01",
+  "imageUrl": "https://www.bing.com/images/search?view=detailV2&ccid=%2b%2fXRPSc5&id=997F976EE047B815585E08C0BF6C8F979DB40271&thid=OIP.-_XRPSc5gMA8nFDwwAIAhgHaF0&mediaurl=https%3a%2f%2fstatic.vecteezy.com%2fsystem%2fresources%2fpreviews%2f022%2f741%2f814%2fnon_2x%2finsurance-concept-property-and-health-insurance-healthcare-finance-and-medical-service-modern-flat-cartoon-style-illustration-on-white-background-vector.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.fbf5d13d273980c03c9c50f0c0020086%3frik%3dcQK0nZePbL%252fACA%26pid%3dImgRaw%26r%3d0&exph=980&expw=1247&q=insurance&FORM=IRPRST&ck=43116432A5C89D4974B4593C7A581A27&selectedIndex=0&itb=0"
 }
